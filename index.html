@@ -19,6 +19,19 @@
             --border-light: #d4dce8;
         }
 
+        /* ===== 進度條 ===== */
+        .page-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2c5282 0%, #4a7ab8 50%, #6a9ee0 100%);
+            width: 0%;
+            z-index: 999;
+            transition: width 0.2s ease;
+            box-shadow: 0 0 10px rgba(44, 82, 130, 0.3);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -57,12 +70,18 @@
         .lang-buttons {
             display: flex;
             gap: 8px;
-            background: var(--bg-white);
-            padding: 10px;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(44, 82, 130, 0.15);
-            border: 1px solid var(--border-light);
-            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px 16px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(44, 82, 130, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .lang-buttons:hover {
+            box-shadow: 0 12px 40px rgba(44, 82, 130, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
         }
 
         .lang-btn {
@@ -75,21 +94,47 @@
             font-weight: 600;
             color: var(--text-light);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 8px;
+            border-radius: 12px;
             letter-spacing: 0.5px;
             white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lang-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(44, 82, 130, 0.1) 0%, rgba(58, 104, 163, 0.05) 100%);
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        .lang-btn:hover::before {
+            width: 200px;
+            height: 200px;
         }
 
         .lang-btn:hover {
             background: linear-gradient(135deg, rgba(44, 82, 130, 0.06) 0%, rgba(58, 104, 163, 0.03) 100%);
             color: var(--primary-dark);
+            transform: scale(1.05);
         }
 
         .lang-btn.active {
             background: linear-gradient(135deg, #2c5282 0%, #3a68a3 100%);
             color: white;
-            box-shadow: 0 4px 12px rgba(44, 82, 130, 0.2);
+            box-shadow: 0 4px 12px rgba(44, 82, 130, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
             font-weight: 700;
+            transform: scale(1.08);
+        }
+
+        .lang-btn.active::before {
+            display: none;
         }
 
         @media (max-width: 768px) {
@@ -131,11 +176,11 @@
         }
 
         .hero h1 {
-            font-family: 'Great Vibes', 'Playfair Display', serif;
-            font-size: 88px;
-            font-weight: 400;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 72px;
+            font-weight: 600;
             margin-bottom: 20px;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             line-height: 1.2;
             text-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             font-style: normal;
@@ -268,8 +313,8 @@
             }
 
             .hero h1 {
-                font-size: 42px;
-                letter-spacing: 1.5px;
+                font-size: 48px;
+                letter-spacing: 2px;
             }
 
             .hero-subtitle {
@@ -410,10 +455,6 @@
             .container {
                 max-width: 900px;
                 padding: 0 35px;
-            }
-
-            .itinerary-grid {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -632,9 +673,12 @@
         /* 行程卡片 */
         .itinerary-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 28px;
             margin-top: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .day-card {
@@ -1339,6 +1383,9 @@
     </style>
 </head>
 <body>
+    <!-- 進度條 -->
+    <div class="page-progress" id="pageProgress"></div>
+
     <!-- 語言選擇器 -->
     <div class="language-selector">
         <div class="lang-buttons">
@@ -2061,6 +2108,13 @@
 
     <script>
         let currentLang = 'zh';
+
+        // ===== 進度條功能 =====
+        window.addEventListener('scroll', function() {
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            document.getElementById('pageProgress').style.width = scrolled + '%';
+        });
 
         function changeLanguage(evt, lang) {
             if (evt) evt.preventDefault();
