@@ -7,16 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Great+Vibes&family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-dark: #2c5282;
-            --primary-mid: #2d5a8c;
-            --primary-light: #4a7ab8;
-            --accent-light: #e8eef5;
-            --accent-pale: #f0f4f9;
-            --bg-white: #ffffff;
-            --text-dark: #1a2332;
-            --text-mid: #2c3e50;
-            --text-light: #5a6c7d;
-            --border-light: #d4dce8;
+            --primary-dark: #6b7f8f;
+            --primary-mid: #7a8fa0;
+            --primary-light: #8fa1b3;
+            --accent-light: #e8eaed;
+            --accent-pale: #f2f4f7;
+            --bg-white: #fafbfc;
+            --text-dark: #3d4750;
+            --text-mid: #515d6b;
+            --text-light: #6b7a88;
+            --border-light: #d4d8dd;
         }
 
         /* ===== 進度條 ===== */
@@ -25,11 +25,11 @@
             top: 0;
             left: 0;
             height: 4px;
-            background: linear-gradient(90deg, #2c5282 0%, #4a7ab8 50%, #6a9ee0 100%);
+            background: linear-gradient(90deg, #6b7f8f 0%, #8fa1b3 50%, #a0b3c5 100%);
             width: 0%;
             z-index: 999;
             transition: width 0.2s ease;
-            box-shadow: 0 0 10px rgba(44, 82, 130, 0.3);
+            box-shadow: 0 0 10px rgba(107, 127, 143, 0.2);
         }
 
         * {
@@ -126,9 +126,9 @@
         }
 
         .lang-btn.active {
-            background: linear-gradient(135deg, #2c5282 0%, #3a68a3 100%);
-            color: white;
-            box-shadow: 0 4px 12px rgba(44, 82, 130, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, #6b7f8f 0%, #7a8fa0 100%);
+            color: #fafbfc;
+            box-shadow: 0 4px 12px rgba(107, 127, 143, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
             font-weight: 700;
             transform: scale(1.08);
         }
@@ -156,11 +156,11 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 20%, #3a68a3 50%, #5a8ac9 80%, #6a9ee0 100%);
+            background: linear-gradient(135deg, #5f6d7a 0%, #6b7f8f 20%, #7a8fa0 50%, #8fa1b3 80%, #9db2c5 100%);
             position: relative;
             padding: 80px 40px 100px;
             text-align: center;
-            color: white;
+            color: #fafbfc;
             overflow: hidden;
             min-height: 520px;
             display: flex;
@@ -353,16 +353,16 @@
 
         /* 導航菜單 */
         .navbar {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(250, 251, 252, 0.95);
             backdrop-filter: blur(20px);
             padding: 0;
             display: flex;
             justify-content: center;
-            box-shadow: 0 2px 8px rgba(44, 82, 130, 0.05);
+            box-shadow: 0 2px 8px rgba(107, 127, 143, 0.05);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid #e8ecf2;
+            border-bottom: 1px solid #d4d8dd;
             overflow-x: auto;
             overflow-y: hidden;
         }
@@ -698,8 +698,8 @@
         }
 
         .day-header {
-            background: linear-gradient(135deg, #2c5282 0%, #3a68a3 50%, #4a7ab8 100%);
-            color: white;
+            background: linear-gradient(135deg, #6b7f8f 0%, #7a8fa0 50%, #8fa1b3 100%);
+            color: #fafbfc;
             padding: 24px 20px;
             font-family: 'Playfair Display', 'Noto Serif JP', serif;
             font-size: 18px;
@@ -707,7 +707,7 @@
             letter-spacing: 0.5px;
             position: relative;
             overflow: hidden;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             z-index: 3;
             cursor: pointer;
             display: flex;
@@ -749,8 +749,8 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(58, 104, 163, 0.1) 0%, rgba(74, 122, 184, 0.05) 100%);
-            border: 1.5px solid rgba(58, 104, 163, 0.2);
+            background: linear-gradient(135deg, rgba(107, 127, 143, 0.08) 0%, rgba(143, 161, 179, 0.04) 100%);
+            border: 1.5px solid rgba(107, 127, 143, 0.15);
             position: relative;
             z-index: 2;
             flex-shrink: 0;
@@ -760,7 +760,7 @@
         .day-content {
             padding: 28px;
             line-height: 1.8;
-            background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(242, 246, 250, 0.4) 100%);
+            background: linear-gradient(135deg, rgba(245, 246, 248, 0.8) 0%, rgba(240, 242, 245, 0.4) 100%);
             position: relative;
             z-index: 2;
             max-height: 0px;
@@ -1464,7 +1464,7 @@
                             <div class="day-date" data-zh="1 月 21 日（三）" data-en="Jan 21 (Wed)" data-ja="1月21日（水）">1 月 21 日（三）</div>
                         </div>
                         <div class="toggle-icon">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #3a68a3; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #7a8fa0; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
                                 <polyline points="4 6 8 10 12 6"></polyline>
                             </svg>
                         </div>
@@ -1472,22 +1472,23 @@
                     <div class="day-content" style="max-height: 0px; opacity: 0; pointer-events: none;">
                         <h4 data-zh="✈️ 台北 → 仙台" data-en="✈️ Taipei → Sendai" data-ja="✈️ 台北→仙台">✈️ 台北 → 仙台</h4>
                         <ul>
-                            <li>星宇航空 JX862</li>
-                            <li>11:50 - 台北桃園機場 (TPE) 起飛</li>
-                            <li>16:00 - 仙台機場 (SDJ) 抵達</li>
+                            <li data-zh="星宇航空 JX862" data-en="Starmax Airlines JX862" data-ja="スターマックス航空 JX862">星宇航空 JX862</li>
+                            <li data-zh="11:50 - 台北桃園機場 (TPE) 起飛" data-en="11:50 - Taipei Taoyuan Airport (TPE) Departure" data-ja="11:50 - 台北桃園空港 (TPE) 出発">11:50 - 台北桃園機場 (TPE) 起飛</li>
+                            <li data-zh="16:00 - 仙台機場 (SDJ) 抵達" data-en="16:00 - Sendai Airport (SDJ) Arrival" data-ja="16:00 - 仙台空港 (SDJ) 到着">16:00 - 仙台機場 (SDJ) 抵達</li>
                         </ul>
                         <h4 data-zh="🚗 仙台機場 → ORIX 取車" data-en="🚗 ORIX Car Rental" data-ja="🚗 ORIX レンタカー">🚗 仙台機場 → ORIX 取車</h4>
                         <ul>
-                            <li>17:00 - ORIX 仙台機場取車</li>
+                            <li data-zh="17:00 - ORIX 仙台機場取車" data-en="17:00 - Pick up at ORIX Sendai Airport" data-ja="17:00 - ORIX仙台空港でレンタカー受取">17:00 - ORIX 仙台機場取車</li>
                         </ul>
                         <h4 data-zh="🍜 晚餐 - Sapporo Kani Honke（螃蟹鍋）" data-en="🍜 Dinner - Sapporo Kani Honke" data-ja="🍜 夕食 - サッポロカニほんや">🍜 晚餐 - Sapporo Kani Honke（螃蟹鍋）</h4>
                         <ul>
-                            <li>18:00 - 螃蟹鍋套餐</li>
+                            <li data-zh="18:00 - 螃蟹鍋套餐" data-en="18:00 - Crab Hotpot Set Meal" data-ja="18:00 - カニ鍋セット">18:00 - 螃蟹鍋套餐</li>
+                            <li data-zh="訂位：Asagiri Hanabi" data-en="Reservation: Asagiri Hanabi" data-ja="予約名：Asagiri Hanabi">訂位：Asagiri Hanabi</li>
                         </ul>
                         <h4 data-zh="🏨 仙台皇家公園酒店 Check in" data-en="🏨 Sendai Royal Park Hotel" data-ja="🏨 仙台ロイヤルパークホテル">🏨 仙台皇家公園酒店 Check in</h4>
                         <h4 data-zh="🛍️ 仙台 Outlet（酒店旁）" data-en="🛍️ Sendai Outlet" data-ja="🛍️ 仙台アウトレット">🛍️ 仙台 Outlet（酒店旁）</h4>
                         <ul>
-                            <li>營業時間：10:00 - 20:00</li>
+                            <li data-zh="營業時間：10:00 - 20:00" data-en="Opening Hours: 10:00 - 20:00" data-ja="営業時間：10:00 - 20:00">營業時間：10:00 - 20:00</li>
                         </ul>
                     </div>
                 </div>
@@ -1500,7 +1501,7 @@
                             <div class="day-date" data-zh="1 月 22 日（四）" data-en="Jan 22 (Thu)" data-ja="1月22日（木）">1 月 22 日（四）</div>
                         </div>
                         <div class="toggle-icon">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #3a68a3; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #7a8fa0; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
                                 <polyline points="4 6 8 10 12 6"></polyline>
                             </svg>
                         </div>
@@ -1509,21 +1510,21 @@
                         <h4 data-zh="🎯 主題｜進入雪國、慢慢來" data-en="Theme: Enter Snow Country" data-ja="テーマ: 雪国へ">🎯 主題｜進入雪國、慢慢來</h4>
                         <h4 data-zh="🚗 移動｜仙台 → 銀山溫泉" data-en="🚗 Movement" data-ja="🚗 移動">🚗 移動｜仙台 → 銀山溫泉</h4>
                         <ul>
-                            <li>出發地點：仙台市區</li>
-                            <li>建議出發：09:00–10:00</li>
-                            <li>車程：約 2.5–3 小時（白天進山 ✔）</li>
+                            <li data-zh="出發地點：仙台市區" data-en="Departure Point: Sendai City Center" data-ja="出発地点：仙台市街地">出發地點：仙台市區</li>
+                            <li data-zh="建議出發：09:00–10:00" data-en="Recommended Departure: 09:00-10:00" data-ja="推奨出発時刻：09:00-10:00">建議出發：09:00–10:00</li>
+                            <li data-zh="車程：約 2.5–3 小時（白天進山 ✔）" data-en="Driving Time: ~2.5-3 hours (Daytime entry recommended)" data-ja="運転時間：約2.5～3時間（昼間入山推奨）">車程：約 2.5–3 小時（白天進山 ✔）</li>
                         </ul>
                         <h4 data-zh="🏨 住宿｜銀山溫泉 銀山莊" data-en="🏨 Accommodation" data-ja="🏨 宿泊">🏨 住宿｜銀山溫泉 銀山莊</h4>
                         <h4 data-zh="🍽️ 餐食" data-en="🍽️ Meals" data-ja="🍽️ 食事">🍽️ 餐食</h4>
                         <ul>
-                            <li>✅ 晚餐：會席料理（已含）</li>
-                            <li>✅ 早餐：隔日旅館內（已含）</li>
+                            <li data-zh="✅ 晚餐：會席料理（已含）" data-en="✅ Dinner: Kaiseki (Included)" data-ja="✅ 夕食：会席料理（含）">✅ 晚餐：會席料理（已含）</li>
+                            <li data-zh="✅ 早餐：隔日旅館內（已含）" data-en="✅ Breakfast: Next day at hotel (Included)" data-ja="✅ 朝食：翌日ホテル内（含）">✅ 早餐：隔日旅館內（已含）</li>
                         </ul>
                         <h4 data-zh="⚠️ 重點提醒" data-en="⚠️ Important Notes" data-ja="⚠️ 注意">⚠️ 重點提醒</h4>
                         <ul>
-                            <li>不要拖到傍晚才進山</li>
-                            <li>下午、晚上各拍一次銀山（感覺完全不同）</li>
-                            <li>晚上不再移動</li>
+                            <li data-zh="不要拖到傍晚才進山" data-en="Don't arrive in the evening" data-ja="夕方の到着は避ける">不要拖到傍晚才進山</li>
+                            <li data-zh="下午、晚上各拍一次銀山（感覺完全不同）" data-en="Photograph Ginzan in afternoon and evening (completely different atmospheres)" data-ja="午後と夜間それぞれ銀山を撮影（雰囲気が全く異なる）">下午、晚上各拍一次銀山（感覺完全不同）</li>
+                            <li data-zh="晚上不再移動" data-en="No travel at night" data-ja="夜間の移動は避ける">晚上不再移動</li>
                         </ul>
                     </div>
                 </div>
@@ -1536,7 +1537,7 @@
                             <div class="day-date" data-zh="1 月 23 日（五）" data-en="Jan 23 (Fri)" data-ja="1月23日（金）">1 月 23 日（五）</div>
                         </div>
                         <div class="toggle-icon">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #3a68a3; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #7a8fa0; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
                                 <polyline points="4 6 8 10 12 6"></polyline>
                             </svg>
                         </div>
@@ -1574,7 +1575,7 @@
                             <div class="day-date" data-zh="1 月 24 日（六）" data-en="Jan 24 (Sat)" data-ja="1月24日（土）">1 月 24 日（六）</div>
                         </div>
                         <div class="toggle-icon">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #3a68a3; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #7a8fa0; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
                                 <polyline points="4 6 8 10 12 6"></polyline>
                             </svg>
                         </div>
@@ -1613,7 +1614,7 @@
                             <div class="day-date" data-zh="1 月 25 日（日）" data-en="Jan 25 (Sun)" data-ja="1月25日（日）">1 月 25 日（日）</div>
                         </div>
                         <div class="toggle-icon">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #3a68a3; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #7a8fa0; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
                                 <polyline points="4 6 8 10 12 6"></polyline>
                             </svg>
                         </div>
@@ -1647,7 +1648,7 @@
                             <div class="day-date" data-zh="1 月 26 日（一）" data-en="Jan 26 (Mon)" data-ja="1月26日（月）">1 月 26 日（一）</div>
                         </div>
                         <div class="toggle-icon">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #3a68a3; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #7a8fa0; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
                                 <polyline points="4 6 8 10 12 6"></polyline>
                             </svg>
                         </div>
@@ -1687,7 +1688,7 @@
                             <div class="day-date" data-zh="1 月 27 日（二）" data-en="Jan 27 (Tue)" data-ja="1月27日（火）">1 月 27 日（二）</div>
                         </div>
                         <div class="toggle-icon">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #3a68a3; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #7a8fa0; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
                                 <polyline points="4 6 8 10 12 6"></polyline>
                             </svg>
                         </div>
@@ -1731,7 +1732,7 @@
                             <div class="day-date" data-zh="1 月 28 日（三）" data-en="Jan 28 (Wed)" data-ja="1月28日（水）">1 月 28 日（三）</div>
                         </div>
                         <div class="toggle-icon">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #3a68a3; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: #7a8fa0; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
                                 <polyline points="4 6 8 10 12 6"></polyline>
                             </svg>
                         </div>
