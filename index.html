@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Victoria's 日本東北行 - 仙台旅程</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Great+Vibes&family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-dark: #2c5282;
@@ -94,13 +94,18 @@
 
         @media (max-width: 768px) {
             .language-selector {
-                top: 12px;
-                right: 12px;
+                position: fixed;
+                top: 260px;
+                right: 16px;
+                z-index: 180;
             }
 
             .lang-buttons {
                 gap: 4px;
                 padding: 6px;
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 10px;
+                box-shadow: 0 4px 16px rgba(44, 82, 130, 0.15);
             }
 
             .lang-btn {
@@ -131,14 +136,14 @@
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 72px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: 3px;
-            line-height: 1.1;
-            text-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
-            font-style: italic;
+            font-family: 'Great Vibes', 'Playfair Display', serif;
+            font-size: 88px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            text-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            font-style: normal;
         }
 
         .hero-subtitle {
@@ -278,6 +283,20 @@
         }
 
         @media (max-width: 480px) {
+            .language-selector {
+                top: 220px;
+                right: 12px;
+            }
+
+            .lang-buttons {
+                padding: 5px;
+            }
+
+            .lang-btn {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+
             .hero {
                 padding: 40px 20px 60px;
                 min-height: 320px;
@@ -396,6 +415,10 @@
             .container {
                 max-width: 900px;
                 padding: 0 35px;
+            }
+
+            .itinerary-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -614,7 +637,7 @@
         /* 行程卡片 */
         .itinerary-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 28px;
             margin-top: 60px;
         }
@@ -627,7 +650,6 @@
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--border-light);
             position: relative;
-            margin-bottom: 28px;
             will-change: transform, box-shadow;
         }
 
@@ -706,8 +728,14 @@
             overflow: visible;
             opacity: 0;
             pointer-events: none;
-            transition: max-height 0.3s ease, opacity 0.3s ease;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
             will-change: max-height, opacity;
+        }
+
+        /* 展開狀態 */
+        .expanded .day-content {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .day-content h4 {
@@ -749,8 +777,12 @@
         }
 
         @media (max-width: 768px) {
+            .itinerary-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
             .day-card {
-                margin-bottom: 20px;
                 will-change: auto;
             }
 
@@ -1395,7 +1427,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="day-content" style="max-height: 0px;">
+                    <div class="day-content" style="max-height: 0px; opacity: 0; pointer-events: none;">
                         <h4 data-zh="✈️ 台北 → 仙台" data-en="✈️ Taipei → Sendai" data-ja="✈️ 台北→仙台">✈️ 台北 → 仙台</h4>
                         <ul>
                             <li>星宇航空 JX862</li>
@@ -1431,7 +1463,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="day-content" style="max-height: 0px;">
+                    <div class="day-content" style="max-height: 0px; opacity: 0; pointer-events: none;">
                         <h4 data-zh="🎯 主題｜進入雪國、慢慢來" data-en="Theme: Enter Snow Country" data-ja="テーマ: 雪国へ">🎯 主題｜進入雪國、慢慢來</h4>
                         <h4 data-zh="🚗 移動｜仙台 → 銀山溫泉" data-en="🚗 Movement" data-ja="🚗 移動">🚗 移動｜仙台 → 銀山溫泉</h4>
                         <ul>
@@ -1467,7 +1499,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="day-content" style="max-height: 0px;">
+                    <div class="day-content" style="max-height: 0px; opacity: 0; pointer-events: none;">
                         <h4 data-zh="🎯 主題｜雪景強度最高的一天" data-en="Theme: Peak Snow Scenery" data-ja="テーマ: 最高の雪景色">🎯 主題｜雪景強度最高的一天</h4>
                         <h4 data-zh="🌅 上午" data-en="🌅 Morning" data-ja="🌅 朝">🌅 上午</h4>
                         <ul>
@@ -1505,7 +1537,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="day-content" style="max-height: 0px;">
+                    <div class="day-content" style="max-height: 0px; opacity: 0; pointer-events: none;">
                         <h4 data-zh="🎯 主題｜可愛收尾＋體力回收" data-en="Theme: Cute Ending + Recovery" data-ja="テーマ: かわいい〆+体力回復">🎯 主題｜可愛收尾＋體力回收</h4>
                         <h4 data-zh="🦊 上午｜藏王狐狸村" data-en="🦊 Zao Fox Village" data-ja="🦊 藏王キツネ村">🦊 上午｜藏王狐狸村</h4>
                         <ul>
@@ -1544,7 +1576,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="day-content" style="max-height: 0px;">
+                    <div class="day-content" style="max-height: 0px; opacity: 0; pointer-events: none;">
                         <h4 data-zh="🎯 主題｜恢復體力、不要貪心" data-en="Theme: Recovery Day" data-ja="テーマ: 回復日">🎯 主題｜恢復體力、不要貪心</h4>
                         <h4 data-zh="🏨 住宿｜三井花園酒店仙台" data-en="🏨 Accommodation" data-ja="🏨 宿泊">🏨 住宿｜三井花園酒店仙台</h4>
                         <h4 data-zh="🌍 全天行程" data-en="🌍 All Day" data-ja="🌍 終日">🌍 全天行程</h4>
@@ -1578,7 +1610,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="day-content" style="max-height: 0px;">
+                    <div class="day-content" style="max-height: 0px; opacity: 0; pointer-events: none;">
                         <h4 data-zh="🌅 上午" data-en="🌅 Morning" data-ja="🌅 朝">🌅 上午</h4>
                         <ul>
                             <li>10:00｜仙台還車（ORIX 仙台站東口）</li>
@@ -1618,7 +1650,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="day-content" style="max-height: 0px;">
+                    <div class="day-content" style="max-height: 0px; opacity: 0; pointer-events: none;">
                         <h4 data-zh="🎯 主題｜雪景＋名湯封頂日" data-en="Theme: Peak Snow & Famous Onsen" data-ja="テーマ: 雪景色+名湯">🎯 主題｜雪景＋名湯封頂日</h4>
                         <h4 data-zh="🌅 上午" data-en="🌅 Morning" data-ja="🌅 朝">🌅 上午</h4>
                         <ul>
@@ -1662,7 +1694,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="day-content" style="max-height: 0px;">
+                    <div class="day-content" style="max-height: 0px; opacity: 0; pointer-events: none;">
                         <h4 data-zh="☀️ 早晨｜酸湯最後溫泉時光" data-en="☀️ Last Onsen Morning" data-ja="☀️ 最後の温泉">☀️ 早晨｜酸湯最後溫泉時光</h4>
                         <ul>
                             <li>06:00-07:00 - 晨間溫泉浴（寧靜時段）</li>
@@ -2074,8 +2106,6 @@
         }
 
         function toggleDay(header) {
-            event.stopPropagation();
-            
             const card = header.closest('.day-card');
             if (!card) return;
             
@@ -2121,8 +2151,10 @@
                 
                 // 觸發動畫
                 setTimeout(() => {
-                    content.style.maxHeight = (scrollHeight + 30) + 'px';
-                    icon.style.transform = 'rotate(180deg)';
+                    if (card.classList.contains('expanded')) {
+                        content.style.maxHeight = (scrollHeight + 30) + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
                 }, 10);
                 
                 setTimeout(() => {
@@ -2133,7 +2165,7 @@
 
         function initializeDays() {
             const dayCards = document.querySelectorAll('.day-card');
-            dayCards.forEach((card, index) => {
+            dayCards.forEach((card) => {
                 const content = card.querySelector('.day-content');
                 const icon = card.querySelector('.toggle-icon');
                 
@@ -2153,9 +2185,12 @@
             });
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(initializeDays, 50);
-        });
+        // 頁面加載完成後初始化
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeDays);
+        } else {
+            initializeDays();
+        }
     </script>
 </body>
 </html>
